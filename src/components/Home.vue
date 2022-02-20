@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref, reactive } from 'vue'
 import {
   Dialog,
   DialogOverlay,
   TransitionChild,
   TransitionRoot,
-} from "@headlessui/vue";
+} from '@headlessui/vue'
 import {
   ArchiveIcon,
   ClockIcon,
@@ -14,7 +14,7 @@ import {
   UserCircleIcon as UserCircleIconOutline,
   ViewListIcon,
   XIcon,
-} from "@heroicons/vue/outline";
+} from '@heroicons/vue/outline'
 import {
   BellIcon,
   CalendarIcon,
@@ -25,66 +25,71 @@ import {
   SearchIcon,
   TagIcon,
   UserCircleIcon as UserCircleIconSolid,
-} from "@heroicons/vue/solid";
+} from '@heroicons/vue/solid'
 
-defineProps<{ msg: string }>();
+const msg = ref('Hello Vue 3 + TypeScript + Vite')
 
-const count = ref(0);
+const count = ref(0)
 
 const navigation = reactive([
-  { name: "All Issues", href: "#", icon: HomeIcon, current: true },
-  { name: "My Issues", href: "#", icon: ViewListIcon, current: false },
-  { name: "Assigned", href: "#", icon: UserCircleIconOutline, current: false },
-  { name: "Closed", href: "#", icon: ArchiveIcon, current: false },
-  { name: "Recent", href: "#", icon: ClockIcon, current: false },
-]);
+  { name: 'All Issues', href: '#', icon: HomeIcon, current: true },
+  { name: 'My Issues', href: '#', icon: ViewListIcon, current: false },
+  {
+    name: 'Assigned',
+    href: '#',
+    icon: UserCircleIconOutline,
+    current: false,
+  },
+  { name: 'Closed', href: '#', icon: ArchiveIcon, current: false },
+  { name: 'Recent', href: '#', icon: ClockIcon, current: false },
+])
 const projects = reactive([
-  { id: 1, name: "GraphQL API", href: "#" },
-  { id: 2, name: "iOS App", href: "#" },
-  { id: 3, name: "Marketing Site Redesign", href: "#" },
-  { id: 4, name: "Customer Portal", href: "#" },
-]);
+  { id: 1, name: 'GraphQL API', href: '#' },
+  { id: 2, name: 'iOS App', href: '#' },
+  { id: 3, name: 'Marketing Site Redesign', href: '#' },
+  { id: 4, name: 'Customer Portal', href: '#' },
+])
 const activity = reactive([
   {
     id: 1,
-    type: "comment",
-    person: { name: "Eduardo Benz", href: "#" },
+    type: 'comment',
+    person: { name: 'Eduardo Benz', href: '#' },
     imageUrl:
-      "https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
+      'https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. ",
-    date: "6d ago",
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. ',
+    date: '6d ago',
   },
   {
     id: 2,
-    type: "assignment",
-    person: { name: "Hilary Mahy", href: "#" },
-    assigned: { name: "Kristin Watson", href: "#" },
-    date: "2d ago",
+    type: 'assignment',
+    person: { name: 'Hilary Mahy', href: '#' },
+    assigned: { name: 'Kristin Watson', href: '#' },
+    date: '2d ago',
   },
   {
     id: 3,
-    type: "tags",
-    person: { name: "Hilary Mahy", href: "#" },
+    type: 'tags',
+    person: { name: 'Hilary Mahy', href: '#' },
     tags: [
-      { name: "Bug", href: "#", color: "bg-rose-500" },
-      { name: "Accessibility", href: "#", color: "bg-indigo-500" },
+      { name: 'Bug', href: '#', color: 'bg-rose-500' },
+      { name: 'Accessibility', href: '#', color: 'bg-indigo-500' },
     ],
-    date: "6h ago",
+    date: '6h ago',
   },
   {
     id: 4,
-    type: "comment",
-    person: { name: "Jason Meyers", href: "#" },
+    type: 'comment',
+    person: { name: 'Jason Meyers', href: '#' },
     imageUrl:
-      "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
+      'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. Scelerisque amet elit non sit ut tincidunt condimentum. Nisl ultrices eu venenatis diam.",
-    date: "2h ago",
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. Scelerisque amet elit non sit ut tincidunt condimentum. Nisl ultrices eu venenatis diam.',
+    date: '2h ago',
   },
-]);
+])
 
-const sidebarOpen = ref(false);
+const sidebarOpen = ref(false)
 </script>
 
 <template>
@@ -324,13 +329,13 @@ const sidebarOpen = ref(false);
                       </h1>
                       <p class="mt-2 text-sm text-gray-500">
                         #400 opened by
-                        {{ " " }}
+                        {{ ' ' }}
                         <a href="#" class="font-medium text-gray-900"
                           >Hilary Mahy</a
                         >
-                        {{ " " }}
+                        {{ ' ' }}
                         in
-                        {{ " " }}
+                        {{ ' ' }}
                         <a href="#" class="font-medium text-gray-900"
                           >Customer Portal</a
                         >
@@ -437,7 +442,7 @@ const sidebarOpen = ref(false);
                                 Bug
                               </div>
                             </a>
-                            {{ " " }}
+                            {{ ' ' }}
                           </li>
                           <li class="inline">
                             <a
@@ -458,7 +463,7 @@ const sidebarOpen = ref(false);
                                 Accessibility
                               </div>
                             </a>
-                            {{ " " }}
+                            {{ ' ' }}
                           </li>
                         </ul>
                       </div>
@@ -547,7 +552,8 @@ const sidebarOpen = ref(false);
                                         >
                                       </div>
                                       <p class="mt-0.5 text-sm text-gray-500">
-                                        Commented {{ item.date }}
+                                        Commented
+                                        {{ item.date }}
                                       </p>
                                     </div>
                                     <div class="mt-2 text-sm text-gray-700">
@@ -580,15 +586,15 @@ const sidebarOpen = ref(false);
                                         class="font-medium text-gray-900"
                                         >{{ item.person.name }}</a
                                       >
-                                      {{ " " }}
+                                      {{ ' ' }}
                                       assigned
-                                      {{ " " }}
+                                      {{ ' ' }}
                                       <a
                                         :href="item.assigned.href"
                                         class="font-medium text-gray-900"
                                         >{{ item.assigned.name }}</a
                                       >
-                                      {{ " " }}
+                                      {{ ' ' }}
                                       <span class="whitespace-nowrap">{{
                                         item.date
                                       }}</span>
@@ -618,10 +624,10 @@ const sidebarOpen = ref(false);
                                           class="font-medium text-gray-900"
                                           >{{ item.person.name }}</a
                                         >
-                                        {{ " " }}
+                                        {{ ' ' }}
                                         added tags
                                       </span>
-                                      {{ " " }}
+                                      {{ ' ' }}
                                       <span class="mr-0.5">
                                         <template
                                           v-for="tag in item.tags"
@@ -647,7 +653,7 @@ const sidebarOpen = ref(false);
                                               >{{ tag.name }}</span
                                             >
                                           </a>
-                                          {{ " " }}
+                                          {{ ' ' }}
                                         </template>
                                       </span>
                                       <span class="whitespace-nowrap">{{
@@ -796,7 +802,7 @@ const sidebarOpen = ref(false);
                           Bug
                         </div>
                       </a>
-                      {{ " " }}
+                      {{ ' ' }}
                     </li>
                     <li class="inline">
                       <a
@@ -815,7 +821,7 @@ const sidebarOpen = ref(false);
                           Accessibility
                         </div>
                       </a>
-                      {{ " " }}
+                      {{ ' ' }}
                     </li>
                   </ul>
                 </div>
