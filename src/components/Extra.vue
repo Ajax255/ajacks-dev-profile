@@ -59,6 +59,7 @@ const activity = reactive([
     comment:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. ',
     date: '6d ago',
+    assigned: { name: 'Kristin Watson', href: '#' },
   },
   {
     id: 2,
@@ -76,6 +77,7 @@ const activity = reactive([
       { name: 'Accessibility', href: '#', color: 'bg-indigo-500' },
     ],
     date: '6h ago',
+    assigned: { name: 'Kristin Watson', href: '#' },
   },
   {
     id: 4,
@@ -86,6 +88,7 @@ const activity = reactive([
     comment:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. Scelerisque amet elit non sit ut tincidunt condimentum. Nisl ultrices eu venenatis diam.',
     date: '2h ago',
+    assigned: { name: 'Kristin Watson', href: '#' },
   },
 ])
 
