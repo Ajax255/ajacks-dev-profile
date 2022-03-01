@@ -1,7 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SidePanel from './components/SidePanel.vue'
+</script>
 
 <template>
-  <router-view />
+  <div class="min-h-full flex">
+    // <SidePanel />
+    <router-view />
+  </div>
 </template>
 
 <style>
