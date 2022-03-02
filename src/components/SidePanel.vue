@@ -9,7 +9,8 @@ import {
   XIcon,
 } from '@heroicons/vue/outline'
 
-const sidebarOpen = ref(false)
+import { useHudStore } from '../stores/hud'
+const store = useHudStore()
 
 const navigation = reactive([
   { name: 'All Issues', href: '#', icon: HomeIcon, current: true },
@@ -30,10 +31,6 @@ const projects = reactive([
   { id: 3, name: 'Marketing Site Redesign', href: '#' },
   { id: 4, name: 'Customer Portal', href: '#' },
 ])
-
-function toggleSidePanel() {
-  this.sidebarOpen.value = !this.sidebarOpen.value
-}
 </script>
 
 <template>
@@ -41,7 +38,7 @@ function toggleSidePanel() {
     <Dialog
       as="div"
       class="fixed inset-0 flex z-40 lg:hidden"
-      @close="sidebarOpen = false"
+      @close="store.togglePanel()"
     >
       <TransitionChild
         as="template"
@@ -79,7 +76,7 @@ function toggleSidePanel() {
               <button
                 type="button"
                 class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                @click="sidebarOpen = false"
+                @click="store.togglePanel()"
               >
                 <span class="sr-only">Close sidebar</span>
                 <XIcon class="h-6 w-6 text-white" aria-hidden="true" />

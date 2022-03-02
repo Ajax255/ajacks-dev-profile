@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
 import { MenuAlt2Icon } from '@heroicons/vue/outline'
+
+import { useHudStore } from '../stores/hud'
+
 import {
   BellIcon,
   CalendarIcon,
@@ -12,6 +15,8 @@ import {
   TagIcon,
   UserCircleIcon as UserCircleIconSolid,
 } from '@heroicons/vue/solid'
+
+const store = useHudStore()
 
 const activity = reactive([
   {
@@ -55,8 +60,6 @@ const activity = reactive([
     assigned: { name: 'Kristin Watson', href: '#' },
   },
 ])
-
-const emit = defineEmits(['toggle-side-panel'])
 </script>
 
 <template>
@@ -67,7 +70,7 @@ const emit = defineEmits(['toggle-side-panel'])
       <button
         type="button"
         class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-900 lg:hidden"
-        @click=""
+        @click="store.togglePanel()"
       >
         <span class="sr-only">Open sidebar</span>
         <MenuAlt2Icon class="h-6 w-6" aria-hidden="true" />
