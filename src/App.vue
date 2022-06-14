@@ -1,12 +1,7 @@
-<script setup lang="ts">
-import SidePanel from './components/SidePanel.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="min-h-full flex">
-    // <SidePanel />
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <style>
@@ -15,7 +10,5 @@ import SidePanel from './components/SidePanel.vue'
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
